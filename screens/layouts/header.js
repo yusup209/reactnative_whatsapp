@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     topBar: {
-        paddingLeft: 16,
-        paddingRight: 16,
+        paddingLeft: 20,
+        paddingRight: 20,
         backgroundColor: '#075E54',
     }
 });

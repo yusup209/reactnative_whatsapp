@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 
-import { Container, Header, Body, Button, Icon, Text, Content, Title, Right, Tab, Tabs, ScrollableTab } from 'native-base';
+import { Container,  Fab, Icon } from 'native-base';
 
 import { MonoText } from '../components/StyledText';
 import HeaderComponent from './layouts/header'
@@ -20,6 +20,11 @@ export default function HomeScreen() {
     <Container>
       <HeaderComponent/>
       <HeaderTabs/>
+      <View style={{ flex: 1 }}>
+        <Fab style={{ backgroundColor: '#25D366' }} position="bottomRight">
+          <Icon name="chatboxes"/>
+        </Fab>
+      </View>
     </Container>
   );
 }
