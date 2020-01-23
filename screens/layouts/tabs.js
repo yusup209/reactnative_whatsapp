@@ -9,7 +9,8 @@ import {
     View,
 } from 'react-native';
 
-import { Container, Header, Body, Button, Icon, Text, Content, Title, Right, Tab, Tabs, ScrollableTab } from 'native-base';
+import { Container, Center, Header, Body, Button, Icon, Text, Content, Title, Right, Tab, Tabs, ScrollableTab, TabHeading } from 'native-base';
+import TabCamera from '../pages/tab_camera'
 import TabChat from '../pages/tab_chat'
 import TabStatus from '../pages/tab_status'
 import TabPanggilan from '../pages/tab_panggilan'
@@ -17,6 +18,9 @@ import TabPanggilan from '../pages/tab_panggilan'
 export default function TabsComponent() {
     return (
         <Tabs tabBarBackgroundColor="#075E54" renderTabBar={() => <ScrollableTab />}>
+            <Tab heading={ <TabHeading style={{ backgroundColor: '#075E54' }}><Icon name="camera"/></TabHeading> }>
+                <TabCamera/>
+            </Tab>
             <Tab heading="CHAT" tabStyle={style.WATabs} activeTabStyle={style.WATabs}>
                 <TabChat/>
             </Tab>

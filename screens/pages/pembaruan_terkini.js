@@ -50,8 +50,8 @@ export default class PembaruanTerkini extends Component {
             )
         } else {
             return (
-                <Container style={{ marginBottom: 80 }}>
-                    <List>
+                <Container style={{ marginBottom: 80, flex: 1 }}>
+                    <List style={{ flex: 1 }}>
                         {
                             this.state.chatArr.map((item) => {
                                 return (

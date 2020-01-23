@@ -60,7 +60,7 @@ export default class TabPanggilan extends Component {
             )
         } else {
             return (
-                <Container>
+                <Container style={{ flex: 1 }}>
                     <List>
                         {
                             this.state.chatArr.map((item) => {

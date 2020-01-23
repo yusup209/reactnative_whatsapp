@@ -5,11 +5,20 @@ import React, { useState } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from './screens/HomeScreen'
+import ChatContent from './screens/pages/ChatContent'
 
-import AppNavigator from './navigation/AppNavigator';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+
+// import AppNavigator from './navigation/AppNavigator';
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
+
+  const mainNavigator = createStackNavigator({
+    Home: { screen: HomeScreen },
+    ChatContent: { screen: ChatContent }
+  })
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
