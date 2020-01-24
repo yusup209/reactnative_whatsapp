@@ -14,18 +14,19 @@ import { Container, List, Header, Body, Button, Icon, Text, Content, Title, Left
 
 export default class CallCard extends Component {
     render() {
+        const { img_url, title, desc, right_icon } = this.props
         return (
             <ListItem avatar onPress={() => { }}>
                 <Left style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <Thumbnail style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} source={{ uri: this.props.img_url }} />
+                    <Thumbnail style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} source={{ uri: img_url }} />
                 </Left>
                 <Body>
-                    <Text numberOfLines={1}>{this.props.title}</Text>
-                    <Text note>{this.props.desc.substring(0, 40)}...</Text>
+                    <Text numberOfLines={1}>{title}</Text>
+                    <Text note>{desc.substring(0, 40)}...</Text>
                 </Body>
                 <Right>
                     <Button transparent>
-                        <Icon name={this.props.right_icon} />
+                        <Icon name={right_icon} />
                     </Button>
                 </Right>
             </ListItem>

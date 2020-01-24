@@ -14,17 +14,20 @@ import {Container, List, Header, Body, Button, Icon, Text, Content, Title, Left,
 
 export default class ChatCard extends Component {
     render() {
+        const { img_url, title, desc, time, badge } = this.props
         return (
             <ListItem avatar onPress={() => { }}>
                 <Left style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <Thumbnail style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} source={{ uri: this.props.img_url }}/>
+                    <Thumbnail style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} source={{ uri: img_url }}>
+                        
+                    </Thumbnail>
                 </Left>
                 <Body>
-                    <Text numberOfLines={1}>{this.props.title}</Text>
-                    <Text note>{this.props.desc}</Text>
+                    <Text numberOfLines={1}>{title}</Text>
+                    <Text note>{desc}</Text>
                 </Body>
                 <Right>
-                    <Text note>{this.props.time}</Text>
+                    <Text note>{time}</Text>
                 </Right>
             </ListItem>
         )

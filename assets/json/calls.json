@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "img_url": "http://www.brunningonline.net/simon/blog/archives/South%20Park%20Avatar.jpg",
+        "title": "Bobotak",
+        "desc": "gw mau cukur dulu ya...",
+        "right_icon": "videocam",
+    },
+    {
+        "id": 2,
+        "img_url": "https://materiell.com/wp-content/uploads/2015/03/john-small.png",
+        "title": "Pak Moel",
+        "desc": "loe dmn?",
+        "right_icon": "videocam"
+    },
+    {
+        "id": 3,
+        "img_url": "https://materiell.com/wp-content/uploads/2015/03/john-small.png",
+        "title": "Pak Moel",
+        "desc": "lorem ipsum dolor sit amet consectetur adipisicing elit euismod mpshh",
+        "right_icon": "call"
+    }
+]

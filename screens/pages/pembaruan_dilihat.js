@@ -11,6 +11,7 @@ import {
 
 import { Container,Spinner, List, Header, Body, Button, Icon, Text, Content, Title, Right, Tab, Tabs, ScrollableTab, Separator } from 'native-base';
 import ChatCard from '../components/ChatCard'
+let seenStatus = require('../../assets/json/seenStatus.json')
 
 export default class PembaruanDilihat extends Component {
     constructor(props) {
@@ -23,16 +24,7 @@ export default class PembaruanDilihat extends Component {
     }
 
     componentDidMount() {
-        const chatArr = [
-            {
-                "id": 3,
-                "img_url": "https://materiell.com/wp-content/uploads/2015/03/john-small.png",
-                "title": "Pak sMoel",
-                "desc": "70 menit yang lalu, 14:02",
-            }
-        ];
-
-        this.setState({ chatArr, loaded: true });
+        this.setState({ chatArr: seenStatus, loaded: true });
     }
 
     render() {
