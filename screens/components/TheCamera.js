@@ -5,7 +5,7 @@ import { Camera } from 'expo-camera';
 import * as Permissions from 'expo-permissions';
 import { FontAwesome, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default class TheCamera extends Component{
+export default class TheCamera extends Component {
     constructor(props){
         this.state = {
             hasPermission: null,
