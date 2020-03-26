@@ -1,24 +1,12 @@
-import * as WebBrowser from 'expo-web-browser';
 import React, { Component } from 'react';
-import {
-    Image,
-    Platform,
-    ScrollView,
-    StyleSheet,
-    TouchableOpacity,
-    View,
-} from 'react-native';
-
-import { Container, Center, List, Header, Body, Button, Icon, Text, Content, Title, Left, Right, Tab, Tabs, ScrollableTab, ListItem, Thumbnail, Spinner } from 'native-base';
+import { TouchableOpacity, View } from 'react-native';
+import { Text } from 'native-base';
 import { Camera } from 'expo-camera';
 import * as Permissions from 'expo-permissions';
 import { FontAwesome, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
-
-export default class TabCamera extends Component {
-    constructor(props) {
-        super(props);
-
+export default class TheCamera extends Component{
+    constructor(props){
         this.state = {
             hasPermission: null,
             isCamOn: true,
