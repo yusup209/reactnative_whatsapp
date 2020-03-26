@@ -9,7 +9,6 @@ export default class TheCamera extends Component {
     constructor(props){
         this.state = {
             hasPermission: null,
-            isCamOn: true,
             type: Camera.Constants.Type.back,
         }
     }
