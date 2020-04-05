@@ -7,18 +7,22 @@ import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from './screens/HomeScreen'
 import ChatContent from './screens/pages/ChatContent'
 
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
+// import { createAppContainer } from 'react-navigation';
+// import { createStackNavigator } from 'react-navigation-stack';
+import { NavigationContainer, StackActions } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 
 // import AppNavigator from './navigation/AppNavigator';
 
+// const mainNavigator = createStackNavigator({
+//   Home: { screen: HomeScreen },
+//   ChatContent: { screen: ChatContent }
+// })
+
+const mainStack = createStackNavigator()
+
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
-
-  const mainNavigator = createStackNavigator({
-    Home: { screen: HomeScreen },
-    ChatContent: { screen: ChatContent }
-  })
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
@@ -32,7 +36,13 @@ export default function App(props) {
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <HomeScreen/>
+        {/* <HomeScreen/> */}
+        <NavigationContainer>
+          <mainStack.Navigator>
+            <mainStack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }}/>
+            <mainStack.Screen name="ChatContent" component={ChatContent}/>
+          </mainStack.Navigator>
+        </NavigationContainer>
       </View>
     );
   }
