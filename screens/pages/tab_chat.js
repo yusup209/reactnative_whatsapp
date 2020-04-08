@@ -13,15 +13,14 @@ import { Container, List, Header, Body, Button, Icon, Text, Content, Title, Left
 import ChatCard from '../components/ChatCard'
 let chatArrr = require('../../assets/json/messages.json')
 
+
 export default class TabChat extends Component {
     constructor(props) {
         super(props);
-        const { navigation } = props
 
         this.state = {
             chatArr: [],
             loaded: false,
-            navigation,
         }
     }
 
@@ -43,7 +42,7 @@ export default class TabChat extends Component {
                         {
                             this.state.chatArr.map((item) => {
                                 return (
-                                    <ChatCard key={item.id} img_url={item.img_url} title={item.title} desc={item.desc} time={item.time}/>
+                                    <ChatCard key={item.id} img_url={item.img_url} title={item.title} desc={item.desc} time={item.time} navigation={this.props.navigation}/>
                                 )
                             })
                         }

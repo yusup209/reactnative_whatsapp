@@ -23,7 +23,7 @@ const mainStack = createStackNavigator()
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
-
+  const {navigation} = props
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
       <AppLoading
@@ -38,9 +38,11 @@ export default function App(props) {
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
         {/* <HomeScreen/> */}
         <NavigationContainer>
-          <mainStack.Navigator>
-            <mainStack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }}/>
-            <mainStack.Screen name="ChatContent" component={ChatContent}/>
+          <mainStack.Navigator screenOptions={{ gestureEnabled: true }}>
+            <mainStack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} navigation={navigation}/>
+            <mainStack.Screen name="ChatContent" options={{ headerShown: false }}>
+              {props => <ChatContent {...props} />}
+            </mainStack.Screen>
           </mainStack.Navigator>
         </NavigationContainer>
       </View>

@@ -16,11 +16,12 @@ import { MonoText } from '../components/StyledText';
 import HeaderComponent from './layouts/header'
 import HeaderTabs from './layouts/tabs'
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
+  const { navigation } = props
   return (
     <Container style={{ flex: 1 }}>
       <HeaderComponent />
-      <HeaderTabs />
+      <HeaderTabs navigation={navigation}/>
       <Fab style={{ backgroundColor: '#25D366' }} position="bottomRight">
         <Icon name="chatboxes" />
       </Fab>

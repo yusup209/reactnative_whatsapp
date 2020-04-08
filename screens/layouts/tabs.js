@@ -15,20 +15,21 @@ import TabChat from '../pages/tab_chat'
 import TabStatus from '../pages/tab_status'
 import TabPanggilan from '../pages/tab_panggilan'
 
-export default function TabsComponent() {
+export default function TabsComponent(props) {
+    const { navigation } = props
     return (
         <Tabs tabBarBackgroundColor="#075E54" renderTabBar={() => <ScrollableTab />}>
             <Tab heading={ <TabHeading style={{ backgroundColor: '#075E54' }}><Icon name="camera"/></TabHeading> }>
-                <TabCamera/>
+                {/* <TabCamera/> */}
             </Tab>
             <Tab heading="CHAT" tabStyle={style.WATabs} activeTabStyle={style.WATabs}>
-                <TabChat/>
+                <TabChat navigation={navigation}/>
             </Tab>
             <Tab heading="STATUS" tabStyle={style.WATabs} activeTabStyle={style.WATabs}>
-                <TabStatus/>
+                <TabStatus navigation={navigation}/>
             </Tab>
             <Tab heading="PANGGILAN" tabStyle={style.WATabs} activeTabStyle={style.WATabs}>
-                <TabPanggilan/>
+                <TabPanggilan navigation={navigation}/>
             </Tab>
         </Tabs>
     )
