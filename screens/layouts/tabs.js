@@ -20,7 +20,7 @@ export default function TabsComponent(props) {
     return (
         <Tabs tabBarBackgroundColor="#075E54" renderTabBar={() => <ScrollableTab />}>
             <Tab heading={ <TabHeading style={{ backgroundColor: '#075E54' }}><Icon name="camera"/></TabHeading> }>
-                {/* <TabCamera/> */}
+                <TabCamera/>
             </Tab>
             <Tab heading="CHAT" tabStyle={style.WATabs} activeTabStyle={style.WATabs}>
                 <TabChat navigation={navigation}/>

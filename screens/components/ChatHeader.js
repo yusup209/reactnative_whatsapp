@@ -3,7 +3,8 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { Left, Body, Right } from 'native-base'
 
-export default function ChatHeader({ navigation }) {
+export default function ChatHeader({ props }) {
+    const { navigation } = props
     return (
         <View style={styles.container}>
             <Left style={styles.backArrow}>

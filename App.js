@@ -40,9 +40,10 @@ export default function App(props) {
         <NavigationContainer>
           <mainStack.Navigator screenOptions={{ gestureEnabled: true }}>
             <mainStack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} navigation={navigation}/>
-            <mainStack.Screen name="ChatContent" options={{ headerShown: false }}>
+            {/* <mainStack.Screen name="ChatContent" options={{ headerShown: false }}>
               {props => <ChatContent {...props} />}
-            </mainStack.Screen>
+            </mainStack.Screen> */}
+            <mainStack.Screen name="ChatContent" component={ChatContent} options={{ headerShown: false }} navigation={navigation}/>
           </mainStack.Navigator>
         </NavigationContainer>
       </View>

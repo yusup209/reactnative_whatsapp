@@ -29,7 +29,7 @@ export default class ChatCard extends Component {
 
     render() {
         return (
-            <ListItem avatar onPress={() => { this.props.navigation.navigate("ChatContent", {title: this.state.item.title}) }}>
+            <ListItem avatar onPress={() => { this.props.navigation.navigate("ChatContent", {name: this.state.item.title}) }}>
                 <Left style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <Thumbnail style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} source={{ uri: this.state.item.img_url }}></Thumbnail>
                 </Left>
